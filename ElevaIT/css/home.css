@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
 body {
     margin: 0;
     padding: 30px;
     font-family: 'Arial', sans-serif;
     display: flex;
+    font-family: "league spartan", "sans serif";
 }
 
     /*Sidebar*/
@@ -34,8 +37,6 @@ body {
     padding: 0;
 }
 
-.back-button{
-}
 
 .menu-item {
     display: block;
@@ -55,12 +56,73 @@ body {
     /* Início */
 
 .botao-inicio{
-    
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    width: 170px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.buttons-div{
+    display: flex;
+    gap: 20px;
 }
 
 .container-principal{
     display: flex;
-    align-items: center;
     flex-direction: column;
     padding-left: 50px;
+    gap: 15px;
+}
+
+#button1 {
+    background-color: #BE6A99;
+    color: white;
+    font-family: "league spartan", "sans serif";
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#button2 {
+    background-color: #C2ACE5;
+    color: white;
+    font-family: "league spartan", "sans serif";
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#button3 {
+    background-color: #C2ACE5;
+    color: white;
+    font-family: "league spartan", "sans serif";
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#button2:hover, #button3:hover {
+    background-color: #BE6A99;
+}
+
+.titulo{
+    color: #6F40BB;
+}
+
+.subtitulo{
+    margin-top: 20px ;
+    color: #A037C2;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.modelo-existente{
+    width: 75vw;
+    background-color: #E7E7E7;
+    padding: 15px;
+    border-radius: 20px;
+    color: #918894;
+}
+
+.modelo-titulo{
+    font-weight: 700;
 }
