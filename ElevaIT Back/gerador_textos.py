@@ -3,6 +3,9 @@ import boto3
 import requests
 from bs4 import BeautifulSoup
 import logging
+import io
+import base64
+from gtts import gTTS
 
 # Configuração do logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -41,7 +44,7 @@ def coletar_dados(tema):
 
 def gerar_textos(mensagem):
     st.session_state.mensagem = ""
-    st.session_state.imagem = ""
+    st.session_state.audio_base64 = ""
 
     with text_spinner_placeholder:
         with st.spinner("Por favor aguarde enquanto sua mensagem está sendo gerada..."):
@@ -80,10 +83,22 @@ def gerar_textos(mensagem):
             response = chamada_api(conversation)
             st.session_state.mensagem = response
 
+            # Convertendo o texto em áudio usando gTTS
+            try:
+                tts = gTTS(text=response, lang='pt')
+                audio_stream = io.BytesIO()
+                tts.write_to_fp(audio_stream)
+                audio_stream.seek(0)
+                st.session_state.audio_base64 = base64.b64encode(audio_stream.read()).decode()
+            except Exception as e:
+                logging.error(f"Erro ao converter texto em áudio: {e}")
+
 st.set_page_config(page_title="Hackaton-SPTech")
 
 if "mensagem" not in st.session_state:
     st.session_state.mensagem = ""
+if "audio_base64" not in st.session_state:
+    st.session_state.audio_base64 = ""
 
 st.title("Hackaton-SPTech") 
 st.markdown("Exemplo de aplicação de IA para geração de textos com base em dados reais e atualizados.")
@@ -99,5 +114,7 @@ with st.form('message_form'):
 if st.session_state.mensagem:
     st.markdown("""---""")
     st.text_area(label="Resposta:", value=st.session_state.mensagem, height=500)
-
-image_spinner_placeholder = st.empty()
+    
+    # Reproduzir o áudio se disponível
+    if st.session_state.audio_base64:
+        st.audio(data=base64.b64decode(st.session_state.audio_base64), format='audio/mp3')
