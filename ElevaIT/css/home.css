@@ -24,31 +24,6 @@ nav{
     border-radius: 25px;
 }
 
-main{
-    height: 80vh;
-
-}
-
-h2, h3{
-    font-size: 32px;
-    color: #6F40BB;
-    margin: 0;
-    padding: 0;
-}
-header{
-    display: flex;
-    width: 80vw;
-    align-items: start;
-    justify-content: space-between;
-    height: 12vh;
-}
-
-header img{
-    width: 11vw;
-    margin-top: -4.5vh;
-    cursor: pointer;
-}
-
 .alignner{
     display: flex;
     align-items: center;
@@ -76,6 +51,33 @@ header img{
     background-color: #552c97ce;
     cursor: pointer;
 }
+
+main{
+    height: 80vh;
+
+}
+
+h2, h3{
+    font-size: 32px;
+    color: #6F40BB;
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    width: 80vw;
+    align-items: start;
+    justify-content: space-between;
+    height: 12vh;
+}
+
+header img{
+    width: 11vw;
+    margin-top: -4.5vh;
+    cursor: pointer;
+}
+
+
 
 .pages{
     display: flex;
