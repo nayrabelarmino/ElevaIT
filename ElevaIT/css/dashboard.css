@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
+
 body {
     height: 100vh;
     align-items: center;
@@ -25,7 +26,7 @@ nav{
 }
 
 main{
-    height: 80vh;
+    height: 86vh;
 
 }
 
@@ -117,27 +118,6 @@ p{
     gap: 3vh;
 }
 
-.cards{
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2vh;
-}
-.card{
-    padding: 1.5vw;
-    gap: 1vh;
-    width: 76vw;
-    background-color: #E7E7E7;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 25px;
-    color: #918894;
-    cursor: pointer;
-}
-
 .content h3{
     font-size: 24px;
 }
@@ -183,7 +163,7 @@ a{
 .box-titulo{
     background-color: #E7E7E7;
     align-items: center;
-    padding: 10px;
+    padding: 8px;
     border-radius: 30px;
     color:#8666B9;
     font-weight: 700;
@@ -194,7 +174,7 @@ a{
 
 .caixa{
     background-color: #E7E7E7;
-    padding: 20px;
+    padding: 15px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -203,10 +183,10 @@ a{
 }
 
 .div-pub{
-    width: 70%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     text-align: start;
 }
 
@@ -222,8 +202,9 @@ a{
 .kpis{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
+    gap: 10%;
 }
 
 .graficos{
@@ -231,11 +212,27 @@ a{
     font-weight: 600;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .circulo{
     color: #000000;
     font-size: 30px;
     font-weight: 700;
+    border-radius: 50%;
+    background-color: transparent;
+    height: 12vh;
+    width: 12vh;
+    border: #8666b9da solid 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color1{
+    border: #6F40BB solid 12px;
+}
+
+.color2{
+    border: #AE89EB solid 12px; 
 }
