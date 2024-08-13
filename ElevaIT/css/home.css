@@ -1,66 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
 body {
-    margin: 0;
-    padding: 30px;
-    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    align-items: center;
+    font-family: "League Spartan";
     display: flex;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1vw;
+    background-color: #f5f5f5;
 }
 
-    /*Sidebar*/
-
-.sidebar {
-    width: 70px;
-    background-color: #b28cd9;
-    padding: 5px;
-    color: white;
+nav{
+    height: 88vh;
+    width: 8vw;
+    background-color: #8666b9be;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    height: 85vh;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    margin: 0 2vw;
     border-radius: 25px;
 }
 
-.icon-barra{
-    height: 30px;
+main{
+    height: 80vh;
+
 }
 
-.icon-chat{
-    height: 25px;
-}
-
-.menu {
-    list-style-type: none;
+h2, h3{
+    font-size: 32px;
+    color: #6F40BB;
+    margin: 0;
     padding: 0;
 }
-
-.back-button{
+header{
+    display: flex;
+    width: 80vw;
+    align-items: start;
+    justify-content: space-between;
+    height: 12vh;
 }
 
-.menu-item {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
+header img{
+    width: 11vw;
+    margin-top: -4.5vh;
+    cursor: pointer;
 }
 
-.menu-item.active, .menu-item:hover {
-    background-color: #9c6bc7;
-}
-
-
-    /* Início */
-
-.botao-inicio{
-    
-}
-
-.container-principal{
+.alignner{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 45%;
+    width: 100%;
     flex-direction: column;
-    padding-left: 50px;
+}
+
+.option img, .option-ativo img{
+    width: 70%;
+    height: 60%;
+}
+.option, .option-ativo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 15px;
+    transition: 300ms;
+}
+
+.option-ativo, .option:hover{
+    background-color: #552c97ce;
+    cursor: pointer;
+}
+
+.pages{
+    display: flex;
+    gap: 1.7vw;
+}
+.page, .page-ativo{
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-color: #C2ACE5;
+    padding: 0.7vw 1.5vw;
+    gap: 0.6vw;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 300ms;
+}
+
+.page:hover{
+    background-color: #BE6A99;
+    cursor: pointer;
+}
+.page img, .page-ativo img{
+    height: 2.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-ativo{
+    background-color: #BE6A99;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+}
+
+.content{
+    margin-top: 6vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.cards{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vh;
+}
+.card{
+    padding: 1.5vw;
+    gap: 1vh;
+    width: 76vw;
+    background-color: #E7E7E7;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 25px;
+    color: #918894;
+    cursor: pointer;
+}
+
+.content h3{
+    font-size: 24px;
+}
+
+span{
+    font-weight: bold;
+}
+
+.separador{
+    height: .5px;
+    width: 50%;
+    background-color: white;
+}
+
+#logout{
+    position: absolute;
+    bottom: 50px;
+}
+a{
+    text-decoration: none;
 }
