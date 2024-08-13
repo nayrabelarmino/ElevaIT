@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../js/dashboard.js" defer></script>
 </head>
-<link rel="stylesheet" href="../css/dashboard.css">
 
 <body>
     <div vw class="enabled">
@@ -17,65 +18,97 @@
     </div>
     <nav>
         <div class="alignner">
-          <a href="../html/home.html" class="option"><img src="../assets/home (2).svg" alt="home"></a>
-          <div class="separador"></div>
-          <a href="./chat.html" class="option"><img src="../assets/chat.svg" alt="chat"></a>
-          <div class="separador"></div>
-          <a href="../html/dashboard.html" class="option-ativo"><img src="../assets/dash.svg" alt="dashboard"></a>
+            <a href="../html/home.html" class="option"><img src="../assets/home (2).svg" alt="home"></a>
+            <div class="separador"></div>
+            <a href="./chat.html" class="option"><img src="../assets/chat.svg" alt="chat"></a>
+            <div class="separador"></div>
+            <a href="../html/dashboard.html" class="option-ativo"><img src="../assets/dash.svg" alt="dashboard"></a>
         </div>
         <a href="../html/login.html" class="option" id="logout"><img src="../assets/logout.svg" alt="logout"></a>
-      </nav>
+    </nav>
 
-  <main>
-    <header>
-        <h2>Dashboard</h2>
-    </header>
-      
-    <section>
-        <div class="div-full">
-            <div class="engajamento">
-                <div class="box-titulo">
-                    <p>Engajamento</p>
+    <main>
+        <header>
+            <h2 id="main-title">Dashboard</h2>
+        </header>
+
+        <section>
+            <div class="div-full">
+                <div id="insights-section" class="engajamento">
+                    <div class="box-titulo">
+                        <p id="insights-title">Engajamento mensal</p>
+                    </div>
+
+                    <div class="kpis" id="kpis">
+                        <div class="graficos">
+                            Visualizações
+                            <div id="kpi1" class="circulo">586</div>
+                        </div>
+                        <div class="graficos">
+                            Likes
+                            <div id="kpi2" class="circulo color1">220</div>
+                        </div>
+                        <div class="graficos">
+                            Comentários
+                            <div id="kpi3" class="circulo color2">152</div>
+                        </div>
+                        <div id="kpi4" class="graficos" id="monthly-posts">
+                            Publicados - Mês
+                            <div class="circulo">4</div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="kpis">
-                    <div class="graficos">
-                        Visualizações
-                        <div class="circulo">25</div>
+
+                <div id="posts-section" class="publicacoes">
+                    <div class="box-titulo">
+                        <p id="posts-title">Publicações do mês</p>
                     </div>
-                    <div class="graficos">
-                        Likes
-                        <div class="circulo color1">20</div>
+                    <div id="pubs-container" class="pubs-container">
+                        <div class="publicacao" onclick="showPostDetails('post1')">
+                            <div class="moldura">
+                                <img src="../assets/post.jpg" alt="">
+                            </div>
+                            <div class="plataforma">
+                                <img src="../assets/instagram.png" alt="">
+                            </div>
+                        </div>
+                        <div class="publicacao" onclick="showPostDetails('post2')">
+                            <div class="moldura">
+                                <img src="../assets/post2.jpg" alt="">
+                            </div>
+                            <div class="plataforma">
+                                <img src="../assets/linkedin.png" alt="">
+                            </div>
+                        </div>
+                        <div class="publicacao" onclick="showPostDetails('post3')">
+                            <div class="moldura">
+                                <img src="../assets/post3.jpg" alt="">
+                            </div>
+                            <div class="plataforma">
+                                <img src="../assets/linkedin.png" alt="">
+                            </div>
+                        </div>
+                        <div class="publicacao" onclick="showPostDetails('post4')">
+                            <div class="moldura">
+                                <img src="../assets/post4.jpg" alt="">
+                            </div>
+                            <div class="plataforma">
+                                <img src="../assets/instagram.png" alt="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="graficos">
-                        Comentários
-                        <div class="circulo color2">15</div>
-                    </div>
-                    <div class="graficos">
-                        Publicados - Mês
-                        <div class="circulo">15</div>
+                    <div id="post-details" class="post-details" style="display: none;">
+                        <div class="imagem">
+                            <img id="post-image" src="" alt="Imagem da publicação">
+                        </div>
+                        <div class="infos">
+                            <p id="caption"></p>
+                            <span id="hashtags"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="publicacao">
-                <div class="box-titulo">
-                    <p>Publicação</p>
-                </div>
-                <div class="caixa">
-                    <div>
-                        <img src="../assets/reninha.png" alt="" width="160px">
-                    </div>
-                    <div class="div-pub">
-                        <p class="titulo-post">Feliz Natal!</p>
-                        <p class="text-post">Em nome de toda a equipe Inova Lopez, desejamos a você um Natal repleto de alegria e harmonia. Este ano foi repleto de desafios e conquistas, e queremos expressar nossa sincera gratidão pelo seu esforço, dedicação e parceria.</p>
-                        <img src="../assets/linkedin.png" alt="" width="30px">
-                    </div>
-                
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
   </main>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
