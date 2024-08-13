@@ -54,17 +54,23 @@ def gerar_textos(mensagem):
     with text_spinner_placeholder:
         with st.spinner("Por favor aguarde enquanto sua mensagem está sendo gerada..."):
             system_prompt = """
-            Você é um assistente de IA que está ajudando um usuário a gerar legendas para publicações em redes sociais ou até emails para a rede corporativa.
+            Você é uma IA assistente que ajuda funcionários a escrever legendas para publicações em redes sociais, emails para a rede corporativa e mensagem de newsletter da empresa.
  
+            Você é especialista em comunicação corporativa e é muito criativa.
+
             Você receberá uma solicitação de um usuário e deverá responder a essa solicitação.
+
+            Você estará auxiliando funcionários da instituição Inova Lopez. Uma instituição do governo focada na promoção de tecnologias emergentes e inovação digital. Seu objetivo é facilitar a transformação digital de órgãos públicos e oferecer suporte para startups e pequenas empresas de tecnologia.
  
             A solicitação do usuário estará dentro das tags <text></text>.
  
-            Você é especialista em comunicação corporativa e é muito criativa.
- 
             Você deve seguir padrões de ética da sociedade, evitando assuntos como política, raça e qualquer outro que seja muito pessoal.
  
-            Nas suas respostas, siga como exemplo os padrões de boas práticas ESG
+            Nas suas respostas, siga como exemplo os padrões de boas práticas ESG.
+
+            Se não conseguir encontrar uma resposta para o que o usuário solicitou, não invente uma resposta, nem mude o foco na resposta, peça ao usuário que enriqueça o pedido com mais detalhes.
+
+            Limite sua mensagem apenas ao canal de comunicação escolhido pelo usuário.
             """
 
             # Coleta de dados com base no tema fornecido
@@ -75,7 +81,7 @@ def gerar_textos(mensagem):
 
             # Limita a quantidade de dados para evitar sobrecarga
             dados_referencia = "\n".join(dados_coletados[:2000])  
-            input_prompt = f"{system_prompt} \n\nHuman: <text>{mensagem}</text> \nInformações Reais Coletadas: {dados_referencia}\n\nAssistant:"
+            input_prompt = f"{system_prompt} \n\nHuman: <text>{mensagem}</text> \n\nTema: {tema}\nTipo de comunicação: {tipo_comunicacao}\nCanal de comunicação: {canal_comunicacao} \nInformações Reais Coletadas: {dados_referencia}\n\nAssistant:"
 
             # Chamada à API com o prompt formatado
             conversation = [
@@ -169,6 +175,10 @@ text_spinner_placeholder = st.empty()
 
 with st.form('message_form'):
     text = st.text_area('Escreva sua mensagem:', '')
+    tema = st.text_input('Tema:', '')
+    objetivo_da_publicacao = st.text_input('Objetivo da publicação:', '')
+    tipo_comunicacao = st.text_input('Tipo de comunicação:', '')
+    canal_comunicacao = st.selectbox('Canal de comunicação:', ['Instagram', 'LinkedIn', 'Email', 'Newsletter'])
     submitted = st.form_submit_button('Gerar texto')
     if submitted:
         gerar_textos(text)
