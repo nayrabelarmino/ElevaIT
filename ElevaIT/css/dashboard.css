@@ -14,7 +14,7 @@ body {
 
 nav{
     height: 88vh;
-    width: 6vw;
+    width: 8vw;
     background-color: #8666b9be;
     display: flex;
     align-items: center;
@@ -22,6 +22,25 @@ nav{
     flex-direction: column;
     margin: 0 2vw;
     border-radius: 25px;
+}
+
+main{
+    height: 80vh;
+
+}
+
+h2, h3{
+    font-size: 32px;
+    color: #6F40BB;
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    width: 80vw;
+    align-items: start;
+    justify-content: space-between;
+    height: 10vh;
 }
 
 .alignner{
@@ -51,33 +70,6 @@ nav{
     background-color: #552c97ce;
     cursor: pointer;
 }
-
-main{
-    height: 80vh;
-
-}
-
-h2, h3{
-    font-size: 32px;
-    color: #6F40BB;
-    margin: 0;
-    padding: 0;
-}
-header{
-    display: flex;
-    width: 80vw;
-    align-items: start;
-    justify-content: space-between;
-    height: 12vh;
-}
-
-header img{
-    width: 11vw;
-    margin-top: -4.5vh;
-    cursor: pointer;
-}
-
-
 
 .pages{
     display: flex;
@@ -166,4 +158,84 @@ span{
 }
 a{
     text-decoration: none;
+}
+
+.div-full{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    gap: 35px;
+}
+
+.engajamento{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.publicacao{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.box-titulo{
+    background-color: #E7E7E7;
+    align-items: center;
+    padding: 10px;
+    border-radius: 30px;
+    color:#8666B9;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 16px;
+}
+
+.caixa{
+    background-color: #E7E7E7;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    gap: 30px;
+}
+
+.div-pub{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: start;
+}
+
+.titulo-post{
+    font-weight: 700;
+    color: #8666B9;
+}
+
+.text-post{
+    color: #605E60;
+}
+
+.kpis{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.graficos{
+    color: #C662E7;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.circulo{
+    color: #000000;
+    font-size: 30px;
+    font-weight: 700;
 }
