@@ -168,3 +168,36 @@ input {
     transform: scale(0.9);
     transition: transform 0.1s ease-in-out;
 }
+
+
+/* Estilização dos botões */
+.botao-container {
+    display: none;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.botao-save, .botao-image {
+    padding: 3px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "League Spartan";
+    font-size: 14px;
+}
+
+.botao-save {
+    background-color: #552c97ce;
+    color: white;
+}
+
+.botao-image {
+    background-color: #8666b9be;
+    color: white;
+}
+
+/* Exibir os botões ao passar o mouse sobre a mensagem da IA */
+.box-msg-ia:hover .botao-container {
+    display: flex;
+}
+
