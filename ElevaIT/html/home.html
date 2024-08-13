@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../js/home.js">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
 </head>
+<link rel="stylesheet" href="../css/home.css">
+
 <body>
-    <!--Barra Lateral-->
-        <div class="sidebar">
-            <ul class="menu">
-                <li><a href="#" class="menu-item active"><span class="icon"><img class="icon-barra" src="../assets/Group 1.svg" alt=""></span></a></li>
-                <li><a href="#" class="menu-item"><span class="icon"><img class="icon-chat" src="../assets/Vector.svg" alt=""></span></a></li>
-                <li><a href="#" class="menu-item"><span class="icon"><img class="icon-barra" src="../assets/Vector (1).svg" alt=""></span></a></li>
-            </ul>
-            <div class="back-button">
-                <a href="#" class="menu-item"><span class="icon"><img class="icon-barra" src="../assets/Vector (4).svg" alt=""></span></a>
-            </div>
-        </div>
-        <div class="content">       
-    
-        <!-- Conteúdo da página -->
+  <nav>
+    <div class="alignner">
+      <a href="#" class="option-ativo"><img src="../assets/home (2).svg" alt="home"></a>
+      <div class="separador"></div>
+      <a href="#" class="option"><img src="../assets/chat.svg" alt="chat"></a>
+      <div class="separador"></div>
+      <a href="#" class="option"><img src="../assets/dash.svg" alt="dashboard"></a>
     </div>
+    <a href="#" class="option" id="logout"><img src="../assets/logout.svg" alt="logout"></a>
+  </nav>
 
-    <!--Início-->
-    <div class="container-principal">
-        <h1 class="titulo">Bem vindo, [Nome]!</h1>
-
-        <div class="buttons-div">
-            <button class="botao-inicio" id="button1" onclick="">Modelos</button>
-            <button class="botao-inicio" id="button2" onclick="">Criar modelo</button>
-            <button class="botao-inicio" id="button3" onclick="">Agendar publicação</button>
-        </div>
-
-        <div class="subtitulo">
-            <span>Modelos Utilizados</span>
-        </div>
-        <div class="modelo-existente">
-            <p ><span class="modelo-titulo">Nome da postagem:</span> Postagem de dia dos pais</p>
-            <p ><span class="modelo-titulo">Canal:</span> Instagram</p>
-            <p ><span class="modelo-titulo">Conteúdo:</span> Nesse Dia dos Pais, quero te agradecer...</p >
-        </div>
-        <div class="modelo-existente">
-            <p ><span class="modelo-titulo">Nome da postagem:</span> Postagem de dia dos pais</p>
-            <p ><span class="modelo-titulo">Canal:</span> Instagram</p>
-            <p ><span class="modelo-titulo">Conteúdo:</span> Nesse Dia dos Pais, quero te agradecer...</p >
-        </div>
+  <main>
+    <header>
+      <h2>Bem Vindo(a), [Nome]!</h2>
+      <img src="../assets/logo.svg" alt="logo">
+    </header>
+    <div class="pages">
+      <a href="#" class="page-ativo">
+        <img src="../assets/livro.svg" alt="">
+        <p>Modelos</p>
+      </a>
+      <a href="#" class="page">
+        <img src="../assets/mais.svg" alt="">
+        <p>Criar Modelo</p>
+      </a>
+      <a href="#" class="page">
+        <img src="../assets/mais.svg" alt="">
+        <p>Agendar publicação</p>
+      </a>
     </div>
-
+    <section class="content">
+      <h3>Modelos Salvos</h3>
+      <div class="cards">
+        <div class="card">
+          <p><span>Postagem: </span>Postagem de dia dos pais</p>
+          <p><span>Canal: </span>Instagram</p>
+          <p><span>Conteúdo: </span>Nesse dia dos pais, quero te agradecer...</p>
+        </div>
+        <div class="card">
+          <p><span>Postagem: </span>Mensagem de Natal</p>
+          <p><span>Canal: </span>E-mail</p>
+          <p><span>Conteúdo: </span>Desejamos a todos um feliz natal</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
-</html> 
+
+</html>
