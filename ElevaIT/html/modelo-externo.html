@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="modais"></div>
     <!--Barra Lateral-->
     <nav>
         <div class="alignner">
@@ -22,8 +23,8 @@
     </nav>
     <main>
         <header>
-            <h2>Bem vindo(a), [Nome]!</h2>
-            <img src="../assets/logo.svg" alt="logo">
+            <h2>Bem vindo(a), Nayra!</h2>
+            <img src="../assets/inova-lopez.png" alt="logo">
         </header>
         <div class="pages">
             <a href="./home.html" class="page">
@@ -83,14 +84,23 @@
                 </div>
                 <div class="line">|</div>
                 <div class="sessao2">
-                    <div class="form-frases">
-                        <p class="titulo-input">Imagem de referência</p>
-                        <input class="input-form" type="text">
-                    </div>
+                    <label class="titulo-input">Estilo de imagem</label>
+                    <select name="" class="select-box" >
+                       <option value="">Selecione uma opção</option>
+                       <option value="">Realista</option>
+                       <option value="">Desenho</option>
+                       <option value="">Pintura</option>
+                       <option value="">Fotografia</option>
+                       <option value="">Abstrato</option>
+                       <option value="">Surrealista</option>
+                       <option value="">Minimalista</option>
+                       <option value="">Pop Art</option>
+                       <option value="">Colagem</option>
+                    </select>
                     <div class="buttons-div">
                         <button class="button-gerar"><img class="img-button" src="../assets/refresh.svg" alt="">Gerar
                             Modelo</button>
-                        <button class="button-salvar">Salvar</button>
+                        <button class="button-salvar" onclick="modalSalvar()">Salvar</button>
                     </div>
 
                 </div>
@@ -99,5 +109,26 @@
         </section>
     </main>
 </body>
-
 </html>
+<script>
+//     function fechar_modal() {
+//     modais.innerHTML = "  ";
+// }
+
+// function modalSalvar() {
+//     modais.innerHTML = `<div class="modal">
+//     <div class="fundo_modal">
+//         <div class="conteudo_modal"> 
+//             <div class="texto">
+//                 <div class="fechar">
+//                     <button onclick="fechar_modal()" class="botao_fechar">X</button>
+//                 </div>
+//                 <h1>Salvo com sucesso!</h1>
+//                 <p>Agora você pode encontrar esse modelo na aba início! :) <br>
+//                 </p>
+//             </div>
+//         </div>
+//     </div>
+// </div>`
+// }
+</script>

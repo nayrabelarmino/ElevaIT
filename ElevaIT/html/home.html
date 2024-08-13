@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../css/home.css">
 
 <body>
+  <div id="modais"></div>
   <nav>
     <div class="alignner">
       <a href="../html/home.html" class="option-ativo"><img src="../assets/home (2).svg" alt="home"></a>
@@ -22,8 +23,8 @@
 
   <main>
     <header>
-      <h2>Bem vindo(a), [Nome]!</h2>
-      <img src="../assets/logo.svg" alt="logo">
+      <h2>Bem vindo(a), Nayra!</h2>
+      <img src="../assets/inova-lopez.png" alt="logo">
     </header>
     <div class="pages">
       <a href="#" class="page-ativo">
@@ -43,14 +44,28 @@
       <h3>Modelos Salvos</h3>
       <div class="cards">
         <div class="card">
-          <p><span>Tema: </span>Busca por novas startups</p>
-          <p><span>Canal: </span>Instagram</p>
-          <p><span>Objetivo: </span>Buscar startups que precisam de apoio...</p>
+          <div>
+            <p><span>Tema: </span>Relatórios Semanais: Acompanhe seu Progresso com a Gente!</p>
+            <p><span>Canal: </span>Instagram</p>
+            <p><span>Objetivo: </span>Você está de olho no crescimento da sua startup e quer garantir...</p>
+          </div>
+          <div class="div-button-modelo">
+            <button onclick="buttonModelo1()" class="button-modelo">
+              Ver modelo
+            </button>
+          </div>
         </div>
         <div class="card">
-          <p><span>Tema: </span>Comunicado sobre pendências</p>
-          <p><span>Canal: </span>E-mail</p>
-          <p><span>Objetivo: </span>Informar os colaboradores a respeito de pendecias em...</p>
+          <div>
+            <p><span>Tema: </span>Busca por novas startups</p>
+            <p><span>Canal: </span>Instagram</p>
+            <p><span>Objetivo: </span>📣 Atenção, Startups! 🚀 Você tem uma ideia inovadora, um projeto promissor ou uma startup...</p>
+          </div>
+          <div class="div-button-modelo">
+            <button onclick="buttonModelo2()" class="button-modelo">
+              Ver modelo
+            </button> 
+          </div>
         </div>
       </div>
     </section>
@@ -58,3 +73,67 @@
 </body>
 
 </html>
+<script>
+      function fechar_modal() {
+      modais.innerHTML = "  ";
+  }
+  
+  function buttonModelo1() {
+      modais.innerHTML = `<div class="modal">
+      <div class="fundo_modal">
+          <div class="conteudo_modal"> 
+              <div class="texto">
+                  <div class="fechar">
+                      <button onclick="fechar_modal()" class="botao_fechar">X</button>
+                  </div>
+                  <h1 class="titulo-modal" ">Modelo Salvo</h1>
+                  <p class="texto-modal">Título: Relatórios Semanais: Acompanhe seu Progresso com a Gente!<br></p>
+                  <p class="texto-modal">Canal: Instagram<br></p>
+                  <p class="texto-modal">Objetivo: Você está de olho no crescimento da sua startup e quer garantir que cada passo conte?<br> Então, a nossa série de relatórios semanais é perfeita para você! 🗓️✨<br>
+
+Acompanhe o desempenho da sua empresa, identifique oportunidades e ajuste suas estratégias com nossos relatórios detalhados. É a maneira ideal de ficar por dentro do que está funcionando e do que pode ser melhorado!<br>
+<br>
+🔍 Como Funciona:<br>
+<br>
+Siga nosso perfil para receber atualizações e insights semanais.<br>
+Envie uma mensagem direta com as principais métricas e dados que você gostaria de acompanhar.<br>
+Participe das nossas enquetes e compartilhe suas dúvidas e feedbacks para personalizarmos ainda mais os relatórios para você.<br>
+Vamos juntos construir um caminho sólido para o sucesso da sua startup! 🌟<br><br>
+
+#RelatóriosSemanais #GestãoDeNegócios #Startups #CrescimentoEmpresarial #Empreendedorismo #AcompanhamentoDeDesempenho</p>
+              </div>
+          </div>
+      </div>
+  </div>`
+  }
+  function buttonModelo2() {
+      modais.innerHTML = `<div class="modal">
+      <div class="fundo_modal">
+          <div class="conteudo_modal"> 
+              <div class="texto">
+                  <div class="fechar">
+                      <button onclick="fechar_modal()" class="botao_fechar">X</button>
+                  </div>
+                  <h1 class="titulo-modal" ">Modelo Salvo</h1>
+                  <p class="texto-modal">Título: Busca por novas startups<br></p>
+                  <p class="texto-modal">Canal: Instagram<br></p>
+                  <p class="texto-modal">Objetivo: 📣 Atenção, Startups! 🚀<br>
+
+Você tem uma ideia inovadora, um projeto promissor ou uma startup em crescimento, mas precisa de um empurrãozinho para alcançar novos patamares? 💡✨<br>
+
+Nós queremos ouvir VOCÊ! No nosso Instagram, estamos à procura de startups incríveis que precisam de apoio para transformar suas visões em realidade. Seja para orientação, investimento, parcerias ou simplesmente um pouco de visibilidade, estamos aqui para ajudar.<br>
+<br>
+🔍 Como participar?<br><br>
+
+Siga nosso perfil para ficar por dentro das novidades e oportunidades.<br>
+Marque sua startup nos comentários ou envie uma DM com uma breve descrição do seu projeto e como podemos ajudar.
+Use a hashtag #StartupsComApoio para que possamos encontrar você mais facilmente!<br>
+Não perca a chance de fazer sua startup brilhar! <br> 🌟 Estamos ansiosos para conhecer sua história e ajudar a impulsionar seu sucesso. 🚀<br>
+
+#Startups #Empreendedorismo #Inovação #ApoioStartups #CrescimentoEmpresarial #VamosJuntos</p>
+              </div>
+          </div>
+      </div>
+  </div>`
+}
+  </script>
