@@ -291,3 +291,14 @@ a{
         display: flex;
         gap: 5%;
     }
+
+    .select-box{
+        background-color: #E7E7E7;
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+        width: 420px;
+        color: #3b333d;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    
