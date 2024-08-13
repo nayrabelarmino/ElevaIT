@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
     <nav>
         <div class="alignner">
             <a href="./home.html" class="option"><img src="../assets/home (2).svg" alt="home"></a>
@@ -26,35 +32,7 @@
         </header>
         <section class="chat">
             <div class="mensagens">
-                <div class="box-msg-ia">
-                    <div class="mensagem-ia" id="mensagem-ia-1">
-                        Legenda: Estamos em busca de novas startups que estejam prontas para crescer e transformar o
-                        mercado com ideias inovadoras e sustentáveis. Se você lidera um projeto que precisa de apoio
-                        financeiro ou estratégico para alcançar o próximo nível, nossa empresa está aqui para ajudar.
-                    </div>
-                    <img src="../assets/audio.svg" alt="Ler mensagem" onclick="lerMensagem('mensagem-ia-1')"
-                        class="audio-icon">
-                    <div class="botao-container">
-                        <button class="botao-save">Salvar Prompt</button>
-                        <button class="botao-image">Gerar Imagem</button>
-                    </div>
-                </div>
-                <div class="box-msg-user">
-                    <div class="mensagem-user">Legenda muito grande, faça ajustes para ser mais objetivo e direto</div>
-                </div>
-                <div class="box-msg-ia">
-                    <div class="mensagem-ia" id="mensagem-ia-2">
-                        Legenda: Estamos em busca de startups inovadoras que precisam de um impulso para crescer. Se o
-                        seu projeto precisa de apoio financeiro ou estratégico, inscreva-se e faça parte de um futuro
-                        sustentável e inclusivo.
-                    </div>
-                    <img src="../assets/audio.svg" alt="Ler mensagem" onclick="lerMensagem('mensagem-ia-2')"
-                        class="audio-icon">
-                    <div class="botao-container">
-                        <button class="botao-save">Salvar Prompt</button>
-                        <button class="botao-image">Gerar Imagem</button>
-                    </div>
-                </div>
+                <!-- Mensagens anteriores -->
             </div>
             <div class="rodape">
                 <div class="entrada">
@@ -99,6 +77,44 @@
                 // Adicionando a nova mensagem ao chat
                 document.querySelector('.mensagens').appendChild(messageBox);
 
+                // Enviar mensagem para o servidor
+                fetch('http://localhost:5000/generate-text', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ mensagem: message })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Criando a caixa de resposta da IA
+                    const iaMessageBox = document.createElement('div');
+                    iaMessageBox.className = 'box-msg-ia';
+
+                    const iaMessageContent = document.createElement('div');
+                    iaMessageContent.className = 'mensagem-ia';
+                    iaMessageContent.textContent = data.mensagem;
+
+                    // Gerar um ID único para a mensagem
+                    const mensagemId = `message-${Date.now()}`;
+                    iaMessageContent.id = mensagemId;
+
+                    const audioIcon = document.createElement('img');
+                    audioIcon.src = '../assets/audio.svg'; // Caminho para o ícone de áudio
+                    audioIcon.className = 'audio-icon';
+                    audioIcon.addEventListener('click', () => lerMensagem(mensagemId));
+
+                    iaMessageBox.appendChild(iaMessageContent);
+                    iaMessageBox.appendChild(audioIcon);
+
+                    // Adicionando a resposta da IA ao chat
+                    document.querySelector('.mensagens').appendChild(iaMessageBox);
+
+                    // Scroll para a última mensagem
+                    document.querySelector('.mensagens').scrollTop = document.querySelector('.mensagens').scrollHeight;
+                })
+                .catch(error => console.error('Erro ao enviar mensagem:', error));
+
                 // Limpando o campo de input
                 inputField.value = "";
 
@@ -140,7 +156,13 @@
         }
 
         function lerMensagem(mensagemId) {
-            const mensagemTexto = document.getElementById(mensagemId).innerText;
+            const mensagemElemento = document.getElementById(mensagemId);
+            if (!mensagemElemento) {
+                console.error("Mensagem não encontrada para o ID:", mensagemId);
+                return;
+            }
+
+            const mensagemTexto = mensagemElemento.innerText;
             const synth = window.speechSynthesis;
 
             // Cancela qualquer fala em andamento
@@ -174,11 +196,14 @@
 
             lerPartes(partesTexto);
         }
-
-
-
-
     </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 </body>
 
 </html>
+<<<<<<< HEAD
+=======
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+>>>>>>> 95cd39ee6aba90c50e5aa691358d86ed0f6ffd0f
