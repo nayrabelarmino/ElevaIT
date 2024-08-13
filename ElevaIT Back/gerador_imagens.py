@@ -17,11 +17,11 @@ def chamada_api(prompt):
     logging.info("Chamando a API de IA para gerar imagem.")
     request = json.dumps({
         "text_prompts": [{"text":prompt,"weight":1}],
-        "cfg_scale": 10,
-        "steps": 50,
-        "seed": 0,
-        "width": 512,
-        "height": 512,
+        "cfg_scale": 20,
+        "steps": 150,
+        "seed": 23,
+        "width": 768,
+        "height": 768,
         "samples": 1,
     })
 
@@ -68,7 +68,7 @@ def gerar_imagens(mensagem):
                 return
 
             # Limita a quantidade de dados para evitar sobrecarga
-            dados_referencia = " ".join(dados_coletados[:10])  
+            dados_referencia = " ".join(dados_coletados[:20000])  
             prompt_para_imagem = f"{mensagem}. Informações adicionais: {dados_referencia}"
 
             # Chamada à API com o prompt formatado

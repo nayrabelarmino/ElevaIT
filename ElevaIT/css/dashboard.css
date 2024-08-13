@@ -11,6 +11,7 @@ body {
     display: flex;
     gap: 1vw;
     background-color: #f5f5f5;
+    box-sizing: border-box;
 }
 
 nav{
@@ -154,10 +155,65 @@ a{
     gap: 35px;
 }
 
-.publicacao{
+.publicacoes{
+    height: 30vh;
+    width: 80vw;
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.pubs-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+}
+
+.publicacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 15vw;
+    height: 30vh;
+    border-radius: 10px;
+}
+
+.moldura{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.moldura img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.plataforma{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    margin-top: 23vh;
+    margin-left: 13vw;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.plataforma img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .box-titulo{
@@ -200,6 +256,7 @@ a{
 }
 
 .kpis{
+    width: 80vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -235,4 +292,44 @@ a{
 
 .color2{
     border: #AE89EB solid 12px; 
+}
+
+/* Atualize esta parte do CSS conforme necessário */
+.post-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adiciona espaçamento entre a imagem e o texto */
+}
+
+.imagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: 30vh;
+}
+
+.imagem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+}
+
+#caption {
+    font-weight: bold;
+    font-size: 18px;
+    color: #6F40BB;
+}
+
+#hashtags {
+    font-size: 16px;
+    color: #605E60;
 }
