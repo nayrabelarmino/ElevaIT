@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+body {
+    height: 100vh;
+    align-items: center;
+    font-family: "League Spartan";
+    display: flex;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1vw;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+nav {
+    height: 88vh;
+    width: 7vw;
+    background-color: #8666b9be;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 2vw;
+    border-radius: 25px;
+}
+
+.alignner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.option img,
+.option-ativo img {
+    width: 70%;
+    height: 60%;
+}
+
+.option,
+.option-ativo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 15px;
+    transition: 300ms;
+}
+
+.option-ativo,
+.option:hover {
+    background-color: #552c97ce;
+    cursor: pointer;
+}
+
+#logout {
+    position: absolute;
+    bottom: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.separador {
+    height: .5px;
+    width: 50%;
+    background-color: white;
+}
+
+main {
+    height: 80vh;
+    width: 80vw;
+}
+
+header {
+    display: flex;
+    width: 80vw;
+    align-items: start;
+    justify-content: end;
+    height: 12vh;
+}
+
+header img {
+    width: 11vw;
+    margin-top: -4.5vh;
+    cursor: pointer;
+}
+
+.box-msg-ia {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    gap: 1vw;
+}
+
+.box-msg-ia img {
+    display: none;
+    width: 30px;
+}
+
+.box-msg-ia:hover img {
+    display: flex;
+}
+
+.box-msg-user {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.mensagens {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    padding-bottom: 1vw;
+    gap: 1vh;
+    overflow-y: auto;
+}
+
+.mensagem-ia {
+    background-color: #ac90da7a;
+    max-width: 45vw;
+    border-radius: 15px 15px 15px 0;
+    padding: 1vw;
+}
+
+.mensagem-user {
+    background-color: #e8a3ca71;
+    max-width: 45vw;
+    border-radius: 15px 15px 0 15px;
+    padding: 1vw;
+}
+
+.entrada {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rodape img {
+    width: 26px;
+    margin-left: -3vw;
+    cursor: pointer;
+}
+
+input {
+    background-color: #E7E7E7;
+    width: 72vw;
+    border: none;
+    outline: none;
+    border-radius: 18px;
+    padding: 1vw 4vw 1vw 1vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.audio-icon:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease-in-out;
+}

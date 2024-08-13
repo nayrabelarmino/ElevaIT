@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="../css/chat.css">
+</head>
+
+<body>
+    <nav>
+        <div class="alignner">
+            <a href="./home.html" class="option"><img src="../assets/home (2).svg" alt="home"></a>
+            <div class="separador"></div>
+            <a href="#" class="option-ativo"><img src="../assets/chat.svg" alt="chat"></a>
+            <div class="separador"></div>
+            <a href="./dashboard.html" class="option"><img src="../assets/dash.svg" alt="dashboard"></a>
+        </div>
+        <a href="./login.html" class="option" id="logout"><img src="../assets/logout.svg" alt="logout"></a>
+    </nav>
+
+    <main>
+        <header>
+            <img src="../assets/logo.svg" alt="" >
+        </header>
+        <section class="chat">
+            <div class="mensagens">
+                <div class="box-msg-ia">
+                    <div class="mensagem-ia" id="mensagem-ia-1">
+                        Legenda: Estamos em busca de novas startups que estejam prontas para crescer e transformar o
+                        mercado com ideias inovadoras e sustentáveis. Se você lidera um projeto que precisa de apoio
+                        financeiro ou estratégico para alcançar o próximo nível, nossa empresa está aqui para ajudar.
+                    </div>
+                    <img src="../assets/audio.svg" alt="Ler mensagem" onclick="lerMensagem('mensagem-ia-1')"
+                        class="audio-icon">
+                </div>
+                <div class="box-msg-user">
+                    <div class="mensagem-user">Legenda muito grande, faça ajustes para ser mais objetivo e direto</div>
+                </div>
+                <div class="box-msg-ia">
+                    <div class="mensagem-ia" id="mensagem-ia-2">
+                        Legenda: Estamos em busca de startups inovadoras que precisam de um impulso para crescer. Se o
+                        seu projeto precisa de apoio financeiro ou estratégico, inscreva-se e faça parte de um futuro
+                        sustentável e inclusivo.
+                    </div>
+                    <img src="../assets/audio.svg" alt="Ler mensagem" onclick="lerMensagem('mensagem-ia-2')"
+                        class="audio-icon">
+                </div>
+            </div>
+            <div class="rodape">
+                <div class="entrada">
+                    <input type="text" id="userInput">
+                    <img src="../assets/send.svg" alt="Enviar" id="sendBtn">
+                </div>
+                <img src="../assets/microfone.svg" alt="Microfone" id="micBtn">
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('sendBtn').addEventListener('click', function () {
+            sendMessage();
+        });
+
+        document.getElementById('userInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        document.getElementById('micBtn').addEventListener('click', function () {
+            startRecognition();
+        });
+
+        function sendMessage() {
+            const inputField = document.getElementById('userInput');
+            const message = inputField.value.trim();
+
+            if (message !== "") {
+                // Criando a caixa de mensagem do usuário
+                const messageBox = document.createElement('div');
+                messageBox.className = 'box-msg-user';
+
+                const messageContent = document.createElement('div');
+                messageContent.className = 'mensagem-user';
+                messageContent.textContent = message;
+
+                messageBox.appendChild(messageContent);
+
+                // Adicionando a nova mensagem ao chat
+                document.querySelector('.mensagens').appendChild(messageBox);
+
+                // Limpando o campo de input
+                inputField.value = "";
+
+                // Scroll para a última mensagem
+                document.querySelector('.mensagens').scrollTop = document.querySelector('.mensagens').scrollHeight;
+            }
+        }
+
+        function startRecognition() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+                alert("Seu navegador não suporta reconhecimento de voz.");
+                return;
+            }
+
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'pt-BR';
+            recognition.interimResults = false; // Apenas resultados finais são considerados
+
+            let finalTranscript = ''; // Armazenar o resultado final
+
+            recognition.onresult = function (event) {
+                finalTranscript += event.results[0][0].transcript;
+            };
+
+            recognition.onerror = function (event) {
+                console.error("Erro no reconhecimento de fala: ", event.error);
+            };
+
+            recognition.onend = function () {
+                // Adicionando um atraso antes de enviar a mensagem
+                setTimeout(function () {
+                    document.getElementById('userInput').value = finalTranscript;
+                    sendMessage();
+                }, 3000); // Aqui você pode ajustar o tempo de atraso em milissegundos
+            };
+
+            recognition.start();
+        }
+
+        function lerMensagem(mensagemId) {
+            const mensagemTexto = document.getElementById(mensagemId).innerText;
+            const synth = window.speechSynthesis;
+
+            // Cancela qualquer fala em andamento
+            if (synth.speaking) {
+                synth.cancel();
+            }
+
+            // Função para dividir o texto com base em vírgulas e pontos finais
+            const dividirTexto = (texto) => {
+                // Divide o texto usando expressões regulares para encontrar vírgulas e pontos finais
+                const partes = texto.split(/(?<=\.)\s+|(?<=,)\s+/);
+                return partes;
+            };
+
+            const partesTexto = dividirTexto(mensagemTexto);
+
+            // Função para ler cada parte em sequência
+            const lerPartes = (partes, index = 0) => {
+                if (index >= partes.length) return;
+
+                const utterance = new SpeechSynthesisUtterance(partes[index]);
+                utterance.lang = 'pt-BR'; // Define o idioma para português do Brasil
+                utterance.pitch = 1; // Tom da voz (1 é o padrão)
+                utterance.rate = 1; // Velocidade da fala (1 é o padrão)
+
+                utterance.onend = () => lerPartes(partes, index + 1); // Lê a próxima parte
+                utterance.onerror = (event) => console.error('Erro na fala: ' + event.error);
+
+                synth.speak(utterance);
+            };
+
+            lerPartes(partesTexto);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -14,7 +14,7 @@ body {
 
 nav{
     height: 88vh;
-    width: 6vw;
+    width: 7vw;
     background-color: #8666b9be;
     display: flex;
     align-items: center;
@@ -22,31 +22,6 @@ nav{
     flex-direction: column;
     margin: 0 2vw;
     border-radius: 25px;
-}
-
-main{
-    height: 80vh;
-
-}
-
-h2, h3{
-    font-size: 32px;
-    color: #6F40BB;
-    margin: 0;
-    padding: 0;
-}
-header{
-    display: flex;
-    width: 80vw;
-    align-items: start;
-    justify-content: space-between;
-    height: 10vh;
-}
-
-header img{
-    width: 11vw;
-    margin-top: -4.5vh;
-    cursor: pointer;
 }
 
 .alignner{
@@ -76,6 +51,33 @@ header img{
     background-color: #552c97ce;
     cursor: pointer;
 }
+
+main{
+    height: 80vh;
+
+}
+
+h2, h3{
+    font-size: 32px;
+    color: #6F40BB;
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    width: 80vw;
+    align-items: start;
+    justify-content: space-between;
+    height: 12vh;
+}
+
+header img{
+    width: 11vw;
+    margin-top: -4.5vh;
+    cursor: pointer;
+}
+
+
 
 .pages{
     display: flex;
